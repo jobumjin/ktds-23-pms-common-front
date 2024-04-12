@@ -3,24 +3,33 @@
   /* 바디부분 배경화면색 */
   --body-bg: #fafafb;
 
-  /* 기본 박스 색은 흰색 보더에는 메인 컬러를 넣어놓기 */
+  /* 기본 박스 색 흰색 */
   --box-bg: #ffffff;
 
   /* !!!!!!!!!!!!!!!! 박스 서브 색은 기본 바디부분 색과 같이 함 */
   --box-sub-bg: #fafafb;
+
   /* 우리의 메인 컬러 ktds의 색깔에 맞춰 붉은색으로 */
   --main-color: #fd3636;
+
   /* 정해보자... */
-  --sub-color: #ff989870;
+  --sub-color: #ff989890;
+  /* 상태 색 */
+  --primary: #696cff;
+  --secondary: #8592a3;
+  --success: #71dd37;
+  --danger: #ff3e1d;
+  --warning: #ffab00;
+  --info: #03c3ec;
+  --light: #fcfdfd;
+  --dark: #233446;
+
   /* 기본 글자 색 #455560 -> 000의 검은색을 써도 괜찮을 것 같다.*/
   --text-color: #000;
   /* 서브 글자 색 */
   --text-second-color: #72849ab3;
   /* 박스라인 컬러 */
   --border-color: #e9e9e9;
-
-  /* 날려!!!! */
-  --menu-item-active-bg: rgba(62, 121, 247, 0.1);
 
   /* 15px -> 0.5rem 너무 동글동글해서 살짝 사무 느낌이 날 수 있도록 줄여보았다. */
   --box-border-radius: 0.5rem;
@@ -29,24 +38,20 @@
   --sidebar-size: 18.75rem;
 
   /* 로고 사이즈 - 헤더 */
-  --sidebar-logo-img-size: 45px;
-  --sidebar-logo-size: 80px;
+  --header-logo-img-size: 2.5rem;
+  --header-logo-size: 3.5rem;
 
   /* 프로필 사진 크기 더 크게 할건지 생각하기*/
   --profile-image-size: 3rem;
 
-  /* 헤더 크기 80px -> 5rem 조금 더 작게 하는건 어떤지..?*/
+  /* 헤더 크기 */
   --main-header-height: 4rem;
 
   /* 그림자 조건 */
   --shadow: 0 1px 4px -1px rgb(0 0 0 / 15%);
 
-  /* 다크모드 할꺼면 해야되는데 안할껀가요..? */
-  --darkmode-toggle-size: 20px;
-
   /* 폰트 */
-  --font-family: "Roboto", sans-serif; 
-  /* --font-family: "Noto Sans KR", sans-serif; */
+  --font-family: "Roboto", sans-serif;
 }
 
 .dark {
