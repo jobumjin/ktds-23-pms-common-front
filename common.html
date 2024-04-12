@@ -1,166 +1,117 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Apex Admin</title>
-    <link rel="shortcut icon" href="/images/logo-mb.png" type="image/png" />
-    <!-- GOOGLE FONT -->
-    <link rel="preconnect" href="https://fonts.gstatic.com" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
-      rel="stylesheet"
-    />
-    <!-- BOXICONS -->
-    <link
-      href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css"
-      rel="stylesheet"
-    />
-    <!-- APP CSS -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>main</title>
     <link rel="stylesheet" href="./common.css" />
-    <link rel="stylesheet" href="./css/app.css" />
-  </head>
-
-  <body>
-    <!-- SIDEBAR -->
+</head>
+<body>
+    <div class="header">
+        <div class="header-items">
+            <div class="header-logo">
+                <img class="header-logo-img" src="./logo.png" alt="" />
+            </div>
+            <div class="header-items-right">
+              <div class="header-timer">20분</div>
+              <img class="header-login-icon" src="./login.png" style="height: 20px;"/>
+            </div>
+        </div>
+    </div>
     <div class="sidebar">
-      <div class="sidebar-logo">
-        <img src="./images/logo-lg.png" alt="Comapny logo" />
-        <div class="sidebar-close" id="sidebar-close">
-          <i class="bx bx-left-arrow-alt"></i>
+        <div class="sidebar-user">
+          <img class="user-img" src="./login.png" alt="" />
+          <div class="sidebar-user-info">
+              <div class="user-name">아무개</div>
+              <div class="user-team">A팀</div>
+          </div>
         </div>
-      </div>
-      <div class="sidebar-user">
-        <div class="sidebar-user-info">
-          <img
-            src="./images/user-image.jpg"
-            alt="User picture"
-            class="profile-image"
-          />
-          <div class="sidebar-user-name">anh tuat</div>
+        <div class="sidebar-menu">
+            <div class="sidebar-submenu">
+              <div class="sidebar-submenu-content">
+                <img class="sidebar-common-icon" src="./images/" alt="" />
+                <span class="sidedbar-menu-name">사원</span>
+                <div class="dropdown-icon"></div>
+              </div>
+              <div class="dropdown-menu">
+                  <a href="#">사원 조회</a>
+                  <a href="#">이력 조회</a>
+              </div>
+            </div>
+            <div class="sidebar-submenu">
+              <div class="sidebar-submenu-content">
+                <img class="sidebar-common-icon" src="./images/" alt="" />
+                <span class="sidedbar-menu-name">부서&팀</span>
+              </div>
+            </div>
+            <div class="sidebar-submenu">
+              <div class="sidebar-submenu-content">
+                <img class="sidebar-common-icon" src="./images/" alt="" />
+                <span class="sidedbar-menu-name">비품</span>
+                <div class="dropdown-icon"></div>
+              </div>
+              <div class="dropdown-menu">
+                  <a href="#">비품 조회</a>
+                  <a href="#">비품 대여</a>
+                  <a href="#">비품 관리(admin)</a>
+                  <a href="#">비품 상세(admin)</a>
+                  <a href="#">비품 대여현황(admin)</a>
+              </div>
+            </div>
+            <div class="sidebar-submenu">
+              <div class="sidebar-submenu-content">
+                <img class="sidebar-common-icon" src="./images/" alt="" />
+                <span class="sidedbar-menu-name">결재</span>
+                <div class="dropdown-icon"></div>
+              </div>
+              <div class="dropdown-menu">
+                  <a href="#">결재 조회</a>
+                  <a href="#">결재 상신</a>
+                  <a href="#">결재 수신(admin)</a>
+              </div>
+            </div>
+            <div class="sidebar-submenu">
+              <div class="sidebar-submenu-content">
+                <img class="sidebar-common-icon" src="./images/" alt="" />
+                <span class="sidedbar-menu-name">프로젝트</span>
+                <div class="dropdown-icon"></div>
+              </div>
+              <div class="dropdown-menu">
+                  <a href="#">프로젝트 관리</a>
+                  <a href="#">요구사항 관리</a>
+                  <a href="#">이슈 관리</a>
+                  <a href="#">QnA</a>
+                  <a href="#">지식 관리</a>
+                  <a href="#">산출물 관리</a>
+                  <a href="#">설문 관리</a>
+                  <a href="#">후기 관리</a>
+              </div>
+            </div>
+            <div class="sidebar-submenu">
+              <div class="sidebar-submenu-content">
+                  <img class="sidebar-common-icon" src="./images/" alt="" />
+                  <span class="sidedbar-menu-name">쪽지</span>
+                  <div class="dropdown-icon"></div>
+              </div>
+              <div class="dropdown-menu">
+                  <a href="#">쪽지 작성</a>
+                  <a href="#">받은 쪽지함</a>
+                  <a href="#">보낸 쪽지함</a>
+                  <a href="#">쪽지 보관함</a>
+              </div>
+            </div>
+            <div class="sidebar-submenu">
+              <div class="sidebar-submenu-content">
+                  <img class="sidebar-common-icon" src="./images/" alt="" />
+                  <span class="sidedbar-menu-name">출퇴근</span>
+                  <div class="dropdown-icon"></div>
+              </div>
+              <div class="dropdown-menu">
+                  <a href="#">출퇴근 조회</a>
+                  <a href="#">사원 출퇴근 조회</a>
+              </div>
+            </div>
         </div>
-        <button class="btn btn-outline">
-          <i class="bx bx-log-out bx-flip-horizontal"></i>
-        </button>
-      </div>
-      <!-- SIDEBAR MENU -->
-      <ul class="sidebar-menu">
-        <li>
-          <a href="#" class="active">
-            <i class="bx bx-home"></i>
-            <span>dashboard</span>
-          </a>
-        </li>
-        <li>
-          <a href="#">
-            <i class="bx bx-shopping-bag"></i>
-            <span>sales</span>
-          </a>
-        </li>
-        <li>
-          <a href="#">
-            <i class="bx bx-chart"></i>
-            <span>analytic</span>
-          </a>
-        </li>
-        <li class="sidebar-submenu">
-          <a href="#" class="sidebar-menu-dropdown">
-            <i class="bx bx-user-circle"></i>
-            <span>account</span>
-            <div class="dropdown-icon"></div>
-          </a>
-          <ul class="sidebar-menu sidebar-menu-dropdown-content">
-            <li>
-              <a href="#"> edit profile </a>
-            </li>
-            <li>
-              <a href="#"> account settings </a>
-            </li>
-            <li>
-              <a href="#"> billing </a>
-            </li>
-          </ul>
-        </li>
-        <li class="sidebar-submenu">
-          <a href="#" class="sidebar-menu-dropdown">
-            <i class="bx bx-category"></i>
-            <span>project</span>
-            <div class="dropdown-icon"></div>
-          </a>
-          <ul class="sidebar-menu sidebar-menu-dropdown-content">
-            <li>
-              <a href="#"> list </a>
-            </li>
-            <li>
-              <a href="#"> add project </a>
-            </li>
-          </ul>
-        </li>
-        <li class="sidebar-submenu">
-          <a href="#" class="sidebar-menu-dropdown">
-            <i class="bx bx-category"></i>
-            <span>e-commerce</span>
-            <div class="dropdown-icon"></div>
-          </a>
-          <ul class="sidebar-menu sidebar-menu-dropdown-content">
-            <li>
-              <a href="#"> list product </a>
-            </li>
-            <li>
-              <a href="#"> add product </a>
-            </li>
-            <li>
-              <a href="#"> orders </a>
-            </li>
-          </ul>
-        </li>
-        <li>
-          <a href="#">
-            <i class="bx bx-mail-send"></i>
-            <span>mail</span>
-          </a>
-        </li>
-        <li>
-          <a href="#">
-            <i class="bx bx-chat"></i>
-            <span>chat</span>
-          </a>
-        </li>
-        <li>
-          <a href="#">
-            <i class="bx bx-calendar"></i>
-            <span>calendar</span>
-          </a>
-        </li>
-        <li class="sidebar-submenu">
-          <a href="#" class="sidebar-menu-dropdown">
-            <i class="bx bx-cog"></i>
-            <span>settings</span>
-            <div class="dropdown-icon"></div>
-          </a>
-          <ul class="sidebar-menu sidebar-menu-dropdown-content">
-            <li>
-              <a href="#" class="darkmode-toggle" id="darkmode-toggle">
-                darkmode
-                <span class="darkmode-switch"></span>
-              </a>
-            </li>
-          </ul>
-        </li>
-      </ul>
-      <!-- END SIDEBAR MENU -->
     </div>
-    <!-- END SIDEBAR -->
-
-    <!-- MAIN CONTENT -->
-    <div class="main">
-      <div class="main-header">
-        <div class="mobile-toggle" id="mobile-toggle">
-          <i class="bx bx-menu-alt-right"></i>
-        </div>
-        <div class="main-title">dashboard</div>
-      </div>
-    </div>
-  </body>
+</body>
 </html>

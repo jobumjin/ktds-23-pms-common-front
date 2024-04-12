@@ -3,24 +3,33 @@
   /* 바디부분 배경화면색 */
   --body-bg: #fafafb;
 
-  /* 기본 박스 색은 흰색 보더에는 메인 컬러를 넣어놓기 */
+  /* 기본 박스 색 흰색 */
   --box-bg: #ffffff;
 
   /* !!!!!!!!!!!!!!!! 박스 서브 색은 기본 바디부분 색과 같이 함 */
   --box-sub-bg: #fafafb;
+
   /* 우리의 메인 컬러 ktds의 색깔에 맞춰 붉은색으로 */
   --main-color: #fd3636;
+
   /* 정해보자... */
-  --sub-color: #ff989870;
+  --sub-color: #ff989890;
+  /* 상태 색 */
+  --primary: #696cff;
+  --secondary: #8592a3;
+  --success: #71dd37;
+  --danger: #ff3e1d;
+  --warning: #ffab00;
+  --info: #03c3ec;
+  --light: #fcfdfd;
+  --dark: #233446;
+
   /* 기본 글자 색 #455560 -> 000의 검은색을 써도 괜찮을 것 같다.*/
   --text-color: #000;
   /* 서브 글자 색 */
   --text-second-color: #72849ab3;
   /* 박스라인 컬러 */
   --border-color: #e9e9e9;
-
-  /* 날려!!!! */
-  --menu-item-active-bg: rgba(62, 121, 247, 0.1);
 
   /* 15px -> 0.5rem 너무 동글동글해서 살짝 사무 느낌이 날 수 있도록 줄여보았다. */
   --box-border-radius: 0.5rem;
@@ -29,24 +38,20 @@
   --sidebar-size: 18.75rem;
 
   /* 로고 사이즈 - 헤더 */
-  --sidebar-logo-img-size: 45px;
-  --sidebar-logo-size: 80px;
+  --header-logo-img-size: 2.5rem;
+  --header-logo-size: 3.5rem;
 
   /* 프로필 사진 크기 더 크게 할건지 생각하기*/
   --profile-image-size: 3rem;
 
-  /* 헤더 크기 80px -> 5rem 조금 더 작게 하는건 어떤지..?*/
+  /* 헤더 크기 */
   --main-header-height: 4rem;
 
   /* 그림자 조건 */
   --shadow: 0 1px 4px -1px rgb(0 0 0 / 15%);
 
-  /* 다크모드 할꺼면 해야되는데 안할껀가요..? */
-  --darkmode-toggle-size: 20px;
-
   /* 폰트 */
-  --font-family: "Roboto", sans-serif; 
-  /* --font-family: "Noto Sans KR", sans-serif; */
+  --font-family: "Roboto", sans-serif;
 }
 
 .dark {
@@ -75,6 +80,38 @@ a {
   display: inline-block;
 }
 
+/* Header */
+.header {
+  background-color: var(--box-bg);
+  padding-left: var(--sidebar-size);
+}
+
+.header-items {
+  display: flex;
+  justify-content: space-between;
+}
+
+.header-items-right {
+  display: flex;
+  align-items: center;
+}
+
+.header-logo {
+  height: var(--sidebar-logo-size);
+  position: relative;
+  padding: 10px 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.header-logo img {
+  height: var(--sidebar-logo-img-size);
+  max-width: 100%;
+}
+
+/* Sidebar */
+
 .sidebar {
   background-color: var(--box-bg);
   position: fixed;
@@ -86,38 +123,14 @@ a {
   overflow-y: auto;
 }
 
-.dark .sidebar {
-  border-right: 2px solid var(--border-color);
-}
-
-.sidebar-logo {
-  height: var(--sidebar-logo-size);
-  position: relative;
-  padding: 10px 5px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.sidebar-logo img {
-  height: var(--sidebar-logo-img-size);
-  max-width: 100%;
-}
-
-.sidebar-close {
+/* .sidebar-close {
   display: none;
-}
+} */
 
 .sidebar-user {
   display: flex;
   align-items: center;
-  justify-content: space-between;
   padding: 15px;
-}
-
-.sidebar-user-info {
-  display: flex;
-  align-items: center;
 }
 
 .sidebar-user-name {
@@ -127,36 +140,10 @@ a {
   text-transform: capitalize;
 }
 
-.profile-image {
+.user-img {
   width: var(--profile-image-size);
   height: var(--profile-image-size);
   border-radius: 10px;
-}
-
-.btn {
-  background-color: transparent;
-  border: none;
-  outline: none;
-  display: grid;
-  place-items: center;
-  cursor: pointer;
-  color: var(--main-color);
-  padding: 0.5rem;
-  border-radius: 0.25rem;
-}
-
-.btn i {
-  font-size: 1.25rem;
-}
-
-.btn-outline {
-  border: 2px solid var(--main-color);
-  transition: background-color 0.2s ease-in-out;
-}
-
-.btn-outline:hover {
-  background-color: var(--main-color);
-  color: #fff;
 }
 
 .sidebar-menu {
@@ -164,7 +151,7 @@ a {
   list-style-type: none;
 }
 
-.sidebar-menu > li > a {
+.sidebar-submenu-content {
   width: 100%;
   padding: 15px;
   height: 45px;
@@ -176,26 +163,26 @@ a {
   transition: color 0.2s ease-in-out;
 }
 
-.sidebar-menu > li > a.active {
+.sidebar-submenu-content.active {
   background-color: var(--menu-item-active-bg);
   color: var(--main-color);
   border-right: 4px solid var(--main-color);
 }
 
-.sidebar-menu > li > a:hover {
+.sidebar-submenu-content:hover {
   color: var(--main-color);
 }
 
-.sidebar-menu > li > a > i {
+.dropdown-icon {
   font-size: 1.5rem;
   margin-right: 10px;
 }
 
-.sidebar-menu-dropdown {
+.sidebar-submenu-content {
   position: relative;
 }
 
-.sidebar-menu-dropdown .dropdown-icon {
+.sidebar-submenu-content .dropdown-icon {
   position: absolute;
   right: 15px;
 }
@@ -242,52 +229,46 @@ a {
   transform: rotate(-45deg);
 }
 
-.sidebar-menu > li > a:hover > .dropdown-icon {
+.sidebar-submenu-content:hover > .dropdown-icon {
   --color: var(--main-color);
 }
 
-.sidebar-menu-dropdown-content {
+.dropdown-menu {
   padding: 0;
   height: 0;
   overflow: hidden;
   transition: height 0.25s ease-in-out;
 }
 
-.sidebar-menu-dropdown-content > li > a {
+.dropdown-menu > a {
   padding-left: 50px;
 }
 
-.darkmode-toggle {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+/* 나중에...  */
+.btn {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  color: var(--main-color);
+  padding: 0.5rem;
+  border-radius: 0.25rem;
 }
 
-.darkmode-switch {
-  --height: var(--darkmode-toggle-size);
-  --width: calc(var(--height) * 2);
-  height: var(--height);
-  width: var(--width);
-  border-radius: calc(var(--height) / 2);
-  background-color: #f5f6fa;
-  position: relative;
+.btn i {
+  font-size: 1.25rem;
 }
 
-.darkmode-switch::before {
-  content: "";
-  --height: 20px;
-  --main-color: #0652dd;
-  width: var(--height);
-  height: var(--height);
-  position: absolute;
-  left: 0;
-  border-radius: 50%;
+.btn-outline {
+  border: 2px solid var(--main-color);
+  transition: background-color 0.2s ease-in-out;
+}
+
+.btn-outline:hover {
   background-color: var(--main-color);
-  transition: left 0.3s ease-in-out;
-}
-
-.darkmode-switch.active::before {
-  left: 50%;
+  color: #fff;
 }
 
 .main {
@@ -301,14 +282,6 @@ a {
   padding: 20px;
   background-color: var(--box-bg);
   box-shadow: var(--shadow);
-}
-
-.dark .main-header {
-  border-bottom: 2px solid var(--border-color);
-}
-
-.mobile-toggle {
-  display: none;
 }
 
 .main-title {
