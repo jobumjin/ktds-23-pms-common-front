@@ -102,7 +102,13 @@ a {
 .header-logout-icon {
   width: 25px;
   margin-left: 40px;
-  margin-right: 40px;
+  margin-right: 70px;
+}
+.header-login-icon {
+  display: none;
+  width: 40px;
+  height: 40px;
+  margin-left: 40px;
 }
 
 /* Sidebar */
