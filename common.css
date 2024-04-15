@@ -77,7 +77,119 @@ body {
   position: relative;
 }
 
-h6, .h6, h5, .h5, h4, .h4, h3, .h3, h2, .h2, h1, .h1 {
+/* 체크 박스 사용법
+ <input type="checkbox" id="checkbox1" />
+        <label for="checkbox1"></label>
+        <label for="checkbox1"></label>
+
+  <input type="checkbox" id="checkbox2" />
+        <label for="checkbox2"></label>
+        <label for="checkbox2"></label>
+  
+  위와 같은 형식으로 사용하되 각 객체에 대한 id와 label for를 고유한 번호로 주어
+  혼선이 없도록 한다. 만약 여러개를 사용할 시 위의 형식과 같이 사용한다.
+*/
+input[type="checkbox"] {
+  /* 원래 기존 스타일 삭제 */
+  display: none;
+}
+
+input[type="checkbox"] + label {
+  /* 체크박스 만들기 */
+  width: 1.2rem;
+  height: 1.2rem;
+  border: 1px solid #000;
+  background-color: var(--border-color);
+  display: inline-block;
+  cursor: pointer;
+  vertical-align: middle;
+  border-radius: 0.3rem;
+  user-select: none; /* 드래그 금지 */
+  margin: 0.3rem;
+}
+
+input[type="checkbox"]:checked + label {
+  /* 체크되었을 때 */
+  background: var(--btn-color);
+}
+
+input[type="checkbox"] + label + label {
+  font-size: 1rem;
+  position: relative;
+  top: 3px;
+  cursor: pointer;
+  user-select: none;
+}
+
+/* 라디오 사용법
+ <input type="radio" id="radio1" name="radio-group" />
+        <label for="radio1"></label>
+        <label for="radio1">1번 국회의원이 좋다</label>
+
+        <input type="radio" id="radio2" name="radio-group" />
+        <label for="radio2"></label>
+        <label for="radio2">2번 국회의원이 좋다1</label>
+
+        <input type="radio" id="radio3" name="radio-group" />
+        <label for="radio3"></label>
+        <label for="radio3">안철수가 좋다</label>
+  
+  위와 같은 형식으로 사용하되 각 객체에 대한 id와 label for를 고유한 번호로 주어
+  혼선이 없도록 한다. 만약 여러개를 사용할 시 위의 형식과 같이 사용한다.
+*/
+input[type="radio"] {
+  /* 원래 기존 스타일 삭제 */
+  display: none;
+}
+
+input[type="radio"] + label {
+  /* 라디오 버튼 만들기 */
+  width: 1.2rem;
+  height: 1.2rem;
+  border: 1px solid #000;
+  background-color: var(--border-color);
+  display: inline-block;
+  cursor: pointer;
+  vertical-align: middle;
+  border-radius: 50%; /* 원 모양으로 만들기 */
+  user-select: none; /* 드래그 금지 */
+  margin: 0.3rem;
+}
+
+input[type="radio"]:checked + label {
+  /* 체크되었을 때 */
+  background: var(--btn-color);
+}
+
+input[type="radio"] + label + label {
+  font-size: 1rem;
+  position: relative;
+  top: 3px;
+  cursor: pointer;
+  user-select: none;
+}
+
+div {
+  margin: 0;
+  padding: 0;
+}
+p {
+  margin: 0;
+  padding: 0;
+}
+
+h6,
+.h6,
+h5,
+.h5,
+h4,
+.h4,
+h3,
+.h3,
+h2,
+.h2,
+h1,
+.h1 {
   margin-top: 0;
   margin-bottom: 1rem;
   font-weight: 500;
@@ -85,28 +197,33 @@ h6, .h6, h5, .h5, h4, .h4, h3, .h3, h2, .h2, h1, .h1 {
   color: #566a7f;
 }
 
-
-h1, .h1 {
+h1,
+.h1 {
   font-size: calc(1.3625rem + 1.35vw);
 }
 
-h2, .h2 {
+h2,
+.h2 {
   font-size: calc(1.325rem + 0.9vw);
 }
 
-h3, .h3 {
+h3,
+.h3 {
   font-size: calc(1.2875rem + 0.45vw);
 }
 
-h4, .h4 {
+h4,
+.h4 {
   font-size: calc(1.2625rem + 0.15vw);
 }
 
-h5, .h5 {
+h5,
+.h5 {
   font-size: 1.125rem;
 }
 
-h6, .h6 {
+h6,
+.h6 {
   /* 15px */
   font-size: 0.9375rem;
 }
@@ -115,7 +232,6 @@ p {
   margin-top: 0;
   margin-bottom: 1rem;
 }
-
 
 a {
   text-decoration: none;
@@ -182,7 +298,7 @@ textarea {
 button {
   width: 5rem;
   height: 2rem;
-  color: #FFF;
+  color: #fff;
   border: 0px;
   font-weight: bold;
   border-radius: 0.25rem;
@@ -190,7 +306,7 @@ button {
 }
 
 button:hover {
-  color: #FFF;
+  color: #fff;
   background-color: var(--main-color);
 }
 
@@ -207,7 +323,7 @@ input[type="text"] {
 input[type="submit"] {
   width: 5rem;
   height: 2rem;
-  color: #FFF;
+  color: #fff;
   border: 0px;
   font-weight: bold;
   border-radius: 0.25rem;
@@ -215,23 +331,23 @@ input[type="submit"] {
 }
 
 input[type="submit"]:hover {
-  color: #FFF;
+  color: #fff;
   background-color: var(--main-color);
 }
 
 select {
   height: 2.2rem;
-	cursor: pointer;
-	width: auto;
-	color: var(--secondary);
-	border-radius: 0.4rem;
-	border: 1px solid;
-	outline: 0;
-	transition: 0.3s ease all;
-	background-color: #FFF;
-	background-repeat: no-repeat;
-	background-position: right 10px center;
-	background-size: 16px 16px;
+  cursor: pointer;
+  width: auto;
+  color: var(--secondary);
+  border-radius: 0.4rem;
+  border: 1px solid;
+  outline: 0;
+  transition: 0.3s ease all;
+  background-color: #fff;
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  background-size: 16px 16px;
 }
 
 /* Header */
@@ -565,7 +681,6 @@ input[type="text"].input-text-title {
     right: -15px;
   }
 }
-
 
 /* 나중에...  
 .btn {
