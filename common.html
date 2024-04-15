@@ -4,6 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>main</title>
+    <script type="text/javascript" src="./jquery-3.7.1.min.js"></script>
+    <script type="text/javascript" src="./common.js"></script>
     <link rel="stylesheet" href="./common.css" />
     <style>
       @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
@@ -17,26 +19,31 @@
         </div>
         <div class="header-items-right">
           <div class="header-timer">20분</div>
+          <img class="header-login-icon" src="./64px icon/header-login.png" />
           <img
-            class="header-login-icon"
-            src="./login.png"
+            class="header-logout-icon"
+            src="./64px icon/header-logout.png"
             style="height: 20px"
           />
         </div>
       </div>
     </div>
     <div class="sidebar">
+      <img class="user-img" src="./login.png" alt="" />
       <div class="sidebar-user">
-        <img class="user-img" src="./login.png" alt="" />
         <div class="sidebar-user-info">
           <div class="user-name">아무개</div>
-          <div class="user-team">A팀</div>
+          <div class="user-team">인사팀</div>
         </div>
       </div>
       <div class="sidebar-menu">
         <div class="sidebar-submenu">
           <div class="sidebar-submenu-content">
-            <img class="sidebar-common-icon" src="./images/" alt="" />
+            <img
+              class="sidebar-common-icon"
+              src="./64px icon/sidebar-employee.png"
+              alt=""
+            />
             <span class="sidedbar-menu-name">사원</span>
             <div class="dropdown-icon"></div>
           </div>
@@ -47,27 +54,39 @@
         </div>
         <div class="sidebar-submenu">
           <div class="sidebar-submenu-content">
-            <img class="sidebar-common-icon" src="./images/" alt="" />
+            <img
+              class="sidebar-common-icon"
+              src="./64px icon/sidebar-department.png"
+              alt=""
+            />
             <span class="sidedbar-menu-name">부서&팀</span>
           </div>
         </div>
         <div class="sidebar-submenu">
           <div class="sidebar-submenu-content">
-            <img class="sidebar-common-icon" src="./images/" alt="" />
+            <img
+              class="sidebar-common-icon"
+              src="./64px icon/sidebar-product.png"
+              alt=""
+            />
             <span class="sidedbar-menu-name">비품</span>
             <div class="dropdown-icon"></div>
           </div>
           <div class="dropdown-menu">
-            <a href="#">비품 조회</a>
-            <a href="#">비품 대여</a>
-            <a href="#">비품 관리(admin)</a>
-            <a href="#">비품 상세(admin)</a>
-            <a href="#">비품 대여현황(admin)</a>
+            <a href="#" class="active">비품 조회</a>
+            <a href="#" class="active">비품 대여</a>
+            <a href="#" class="active">비품 관리(admin)</a>
+            <a href="#" class="active">비품 상세(admin)</a>
+            <a href="#" class="active">비품 대여현황(admin)</a>
           </div>
         </div>
         <div class="sidebar-submenu">
           <div class="sidebar-submenu-content">
-            <img class="sidebar-common-icon" src="./images/" alt="" />
+            <img
+              class="sidebar-common-icon"
+              src="./64px icon/sidebar-approval.png"
+              alt=""
+            />
             <span class="sidedbar-menu-name">결재</span>
             <div class="dropdown-icon"></div>
           </div>
@@ -79,7 +98,11 @@
         </div>
         <div class="sidebar-submenu">
           <div class="sidebar-submenu-content">
-            <img class="sidebar-common-icon" src="./images/" alt="" />
+            <img
+              class="sidebar-common-icon"
+              src="./64px icon/sidebar-project.png"
+              alt=""
+            />
             <span class="sidedbar-menu-name">프로젝트</span>
             <div class="dropdown-icon"></div>
           </div>
@@ -96,7 +119,11 @@
         </div>
         <div class="sidebar-submenu">
           <div class="sidebar-submenu-content">
-            <img class="sidebar-common-icon" src="./images/" alt="" />
+            <img
+              class="sidebar-common-icon"
+              src="./64px icon/sidebar-memo.png"
+              alt=""
+            />
             <span class="sidedbar-menu-name">쪽지</span>
             <div class="dropdown-icon"></div>
           </div>
@@ -109,7 +136,11 @@
         </div>
         <div class="sidebar-submenu">
           <div class="sidebar-submenu-content">
-            <img class="sidebar-common-icon" src="./images/" alt="" />
+            <img
+              class="sidebar-common-icon"
+              src="./64px icon/sidebar-commute.png"
+              alt=""
+            />
             <span class="sidedbar-menu-name">출퇴근</span>
             <div class="dropdown-icon"></div>
           </div>
@@ -119,6 +150,25 @@
           </div>
         </div>
       </div>
+    </div>
+    <div class="main">
+      <div class="main-common">
+        <img src="./64px icon/이름 로그인 시간 등등.png" alt="" />
+      </div>
+      <div class="main-common">
+        <!-- 컨텐트 등록시 삭제 -->
+        <img
+          src="https://i.namu.wiki/i/c7SknQhaSBgDtCBjXrIuceZPSGiUM4X5qTRAlibrwBcZfiLTaF-fbY7zeJ1Pdm0ILSdrCKoO-m73mMfnPdckNQ.webp"
+          alt=""
+        />
+      </div>
+      <div class="main-common">
+        <div>보낸쪽지</div>
+        <div>받은쪽지 중 안읽은 쪽지?</div>
+        <div>쪽지 보관함</div>
+      </div>
+      <div class="main-common">graph</div>
+      <div class="main-common">project</div>
     </div>
   </body>
 </html>

@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
 :root {
   /* px 은 모두 rem (16px) 으로 변경 */
   /* 바디부분 배경화면색 */
@@ -8,6 +9,8 @@
   --box-sub-bg: #fafafb;
   /* 메인 컬러 */
   --main-color: #fd3636;
+  --btn-color: #ee6953;
+
   /* 두번째 메인 컬러 정해보자... */
   --sub-color: #ff989870;
   /* 기본 글자 색 */
@@ -37,7 +40,7 @@
   --sidebar-logo-size: 5rem;
 
   /* 프로필 사진 크기 더 크게 할건지 생각하기*/
-  --profile-image-size: 3rem;
+  --profile-image-size: 5rem;
 
   /* 헤더 크기 4rem */
   --main-header-height: 4rem;
@@ -47,6 +50,17 @@
 
   /* 폰트 */
   --font-family: "Roboto", sans-serif;
+  --font-size: 16px;
+  --body-font-size: 0.9375rem;
+
+  ::-webkit-scrollbar {
+    width: 5px; /* 세로축 스크롤바 폭 너비 */
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #bbb;
+    border: 0px solid #9b6a2f; /* 스크롤바 막대 테두리 설정  */
+    border-radius: 12px 12px 12px 12px;
+  }
 }
 
 * {
@@ -57,15 +71,128 @@
 
 body {
   font-family: "Roboto", sans-serif;
+  font-size: var(--body-font-size);
   background-color: var(--body-bg);
   color: var(--text-color);
   position: relative;
 }
 
+h6, .h6, h5, .h5, h4, .h4, h3, .h3, h2, .h2, h1, .h1 {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  font-weight: 500;
+  line-height: 1.1;
+  color: #566a7f;
+}
+
+
+h1, .h1 {
+  font-size: calc(1.3625rem + 1.35vw);
+}
+
+h2, .h2 {
+  font-size: calc(1.325rem + 0.9vw);
+}
+
+h3, .h3 {
+  font-size: calc(1.2875rem + 0.45vw);
+}
+
+h4, .h4 {
+  font-size: calc(1.2625rem + 0.15vw);
+}
+
+h5, .h5 {
+  font-size: 1.125rem;
+}
+
+h6, .h6 {
+  /* 15px */
+  font-size: 0.9375rem;
+}
+
+p {
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+
 a {
   text-decoration: none;
   color: unset;
   display: inline-block;
+}
+
+ol,
+ul {
+  padding-left: 2rem;
+}
+
+ol,
+ul,
+dl {
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+img,
+svg {
+  vertical-align: middle;
+}
+
+table {
+  caption-side: bottom;
+  border-collapse: collapse;
+}
+
+/* caption {
+  padding-top: 0.625rem;
+  padding-bottom: 0.625rem;
+  color: #a1acb8;
+  text-align: left;
+} */
+
+th {
+  font-weight: 600;
+  text-align: inherit;
+  text-align: -webkit-match-parent;
+}
+
+thead,
+tbody,
+tr,
+td,
+th {
+  border-color: inherit;
+  border-style: solid;
+  border-width: 0;
+  padding: 0.8rem;
+}
+
+input,
+button,
+select,
+textarea {
+  margin: 0;
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+}
+
+button {
+  width: 5rem;
+  height: 2rem;
+  color: #FFF;
+  border: 0px;
+  font-weight: bold;
+  border-radius: 0.25rem;
+  background-color: var(--btn-color);
+}
+
+button:hover {
+  color: #FFF;
+  background-color: var(--main-color);
+  
 }
 
 /* Header */
@@ -95,7 +222,20 @@ a {
 
 .header-logo img {
   height: var(--sidebar-logo-img-size);
-  max-width: 100%;
+  width: 70px;
+  height: 50px;
+  margin-left: 40px;
+}
+.header-logout-icon {
+  width: 25px;
+  margin-left: 40px;
+  margin-right: 70px;
+}
+.header-login-icon {
+  display: none;
+  width: 40px;
+  height: 40px;
+  margin-left: 40px;
 }
 
 /* Sidebar */
@@ -117,14 +257,23 @@ a {
 
 .sidebar-user {
   display: flex;
+  height: 10rem;
   align-items: center;
   padding: 15px;
+  justify-content: space-evenly;
+  text-align: center;
 }
 
-.sidebar-user-name {
-  margin-left: 10px;
-  font-size: 1.25rem;
-  font-weight: 700;
+.user-name {
+  font-size: 1.7rem;
+  font-weight: 550;
+  text-transform: capitalize;
+}
+
+.user-team {
+  margin-top: 1rem;
+  font-size: 1rem;
+  font-weight: 500;
   text-transform: capitalize;
 }
 
@@ -132,13 +281,21 @@ a {
   width: var(--profile-image-size);
   height: var(--profile-image-size);
   border-radius: 10px;
+  margin-left: 6.875rem;
+  margin-right: 20px;
+  margin-top: 3rem;
 }
 
 .sidebar-menu {
   padding: 10px 0;
   list-style-type: none;
 }
-
+.sidebar-common-icon {
+  width: 25px;
+  height: 25px;
+  margin-left: 15px;
+  margin-right: 30px;
+}
 .sidebar-submenu-content {
   width: 100%;
   padding: 15px;
@@ -229,10 +386,157 @@ a {
 }
 
 .dropdown-menu > a {
-  padding-left: 50px;
+  width: 100%;
+  padding: 15px;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  font-size: 1rem;
+  font-weight: 600;
+  text-transform: capitalize;
+  padding-left: 100px;
+}
+.dropdown-menu > a:hover {
+  color: var(--main-color);
 }
 
-/* 나중에...  */
+/* content */
+.main {
+  padding-left: var(--sidebar-size);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: repeat(6, 10rem);
+  margin: 5rem 10rem 0rem 10rem;
+}
+.main-common {
+  background-color: #fff;
+  border: 1px solid #000;
+  border-radius: var(--box-border-radius);
+  margin: 1rem 1.5rem;
+}
+
+.main-common:nth-child(1) {
+  grid-row: 1/3;
+}
+.main-common:nth-child(2) {
+  grid-row: 1/4;
+}
+.main-common:nth-child(3) {
+  display: flex;
+}
+.main-common:nth-child(3) > div {
+  border: 3px solid #000;
+  width: 33%;
+  margin: 0.5rem;
+}
+.main-common:nth-child(4) {
+  grid-column: 1/3;
+}
+.main-common:nth-child(5) {
+  grid-column: 1/3;
+  grid-row: 5/7;
+}
+
+/* 컨텐트 등록시 삭제해야될 부분 */
+.main-common:nth-child(1) > img {
+  width: 100%;
+  height: 100%;
+}
+.main-common:nth-child(2) > img {
+  width: 100%;
+  height: 100%;
+}
+
+
+
+.table {
+  /* --bs-table-bg: transparent;
+  --bs-table-accent-bg: transparent;
+  --bs-table-striped-color: #697a8d;
+  --bs-table-striped-bg: #f9fafb;
+  --bs-table-active-color: #697a8d;
+  --bs-table-active-bg: rgba(67, 89, 113, 0.1);
+  --bs-table-hover-color: #697a8d;
+  --bs-table-hover-bg: rgba(67, 89, 113, 0.06); */
+  width: 100%;
+  margin-bottom: 1rem;
+  vertical-align: middle;
+  border-color: #d9dee3;
+  padding: 0.625rem 1.25rem;
+}
+
+.table > tbody {
+  vertical-align: inherit;
+}
+
+
+.table > thead {
+  vertical-align: bottom;
+}
+
+tr {
+  border-bottom: 1px solid gray;
+}
+
+tr:hover {
+  color: #697a8d;
+  background-color: var(--body-bg);
+}
+
+.btn-crt {
+
+}
+
+.btn-mdfy {
+
+}
+
+
+@media only screen and (max-width: 1280px) {
+  .sidebar {
+    transition: transform 0.3s ease-in-out;
+    max-width: 100%;
+    z-index: 99;
+    transform: translateX(-100%);
+  }
+
+  .sidebar.active {
+    transform: translateX(0);
+  }
+
+  .header {
+    padding: 0;
+  }
+
+  /* 화면이 줄었을때 grid 에서 block으로 바뀜 */
+  .main {
+    padding-left: 0;
+    display: block;
+  }
+
+  /* 화면을 줄였을 때 컨텐트별 크기 지정하는 법 */
+  /* .main-common {
+    width: 30rem;
+    height: 30rem;
+  } */
+
+  .mobile-toggle,
+  .sidebar-close {
+    display: grid;
+    place-items: center;
+    font-size: 2rem;
+    margin-right: 30px;
+    cursor: pointer;
+  }
+
+  .sidebar-close {
+    position: absolute;
+    right: -15px;
+  }
+}
+
+
+/* 나중에...  
 .btn {
   background-color: transparent;
   border: none;
@@ -367,7 +671,7 @@ a {
 .f-height {
   height: 100%;
 }
-
+/* 
 table {
   width: 100%;
   min-width: 1000px;
@@ -474,10 +778,11 @@ table td {
     font-size: 2rem;
     margin-right: 30px;
     cursor: pointer;
-  }
+  } 
 
   .sidebar-close {
     position: absolute;
     right: -15px;
   }
 }
+*/
