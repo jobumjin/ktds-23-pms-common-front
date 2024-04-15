@@ -192,7 +192,46 @@ button {
 button:hover {
   color: #FFF;
   background-color: var(--main-color);
-  
+}
+
+input[type="text"] {
+  width: 16rem;
+  height: 2rem;
+  border: 0;
+  border-radius: var(--box-border-radius);
+  padding-left: 10px;
+  outline: none;
+  background-color: var(--border-color);
+}
+
+input[type="submit"] {
+  width: 5rem;
+  height: 2rem;
+  color: #FFF;
+  border: 0px;
+  font-weight: bold;
+  border-radius: 0.25rem;
+  background-color: var(--btn-color);
+}
+
+input[type="submit"]:hover {
+  color: #FFF;
+  background-color: var(--main-color);
+}
+
+select {
+  height: 2.2rem;
+	cursor: pointer;
+	width: auto;
+	color: var(--secondary);
+	border-radius: 0.4rem;
+	border: 1px solid;
+	outline: 0;
+	transition: 0.3s ease all;
+	background-color: #FFF;
+	background-repeat: no-repeat;
+	background-position: right 10px center;
+	background-size: 16px 16px;
 }
 
 /* Header */
@@ -447,8 +486,6 @@ button:hover {
   height: 100%;
 }
 
-
-
 .table {
   /* --bs-table-bg: transparent;
   --bs-table-accent-bg: transparent;
@@ -469,7 +506,6 @@ button:hover {
   vertical-align: inherit;
 }
 
-
 .table > thead {
   vertical-align: bottom;
 }
@@ -483,14 +519,9 @@ tr:hover {
   background-color: var(--body-bg);
 }
 
-.btn-crt {
-
+input[type="text"].input-text-title {
+  width: 40rem;
 }
-
-.btn-mdfy {
-
-}
-
 
 @media only screen and (max-width: 1280px) {
   .sidebar {
